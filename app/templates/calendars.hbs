@@ -1,0 +1,8 @@
+{{outlet}}
+<h1>Calendriers</h1>
+<div id="calendars">
+{{#each model as |calendar|}}
+    {{#admin-calendar calendar=calendar edit=calendar.hasDirtyAttributes}}{{/admin-calendar}}
+{{/each}}
+</div>
+<button {{action "createCalendar"}}>Nouveau calendrier</button>

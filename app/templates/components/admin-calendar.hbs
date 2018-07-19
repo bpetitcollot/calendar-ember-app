@@ -1,0 +1,10 @@
+<div class="calendar">
+    {{#if edit}}
+        {{input value=calendar.name}}
+        <button {{action "submitCalendar" calendar}}>Enregistrer</button>
+    {{else}}
+        {{#link-to "calendar" calendar.id}}{{calendar.name}}{{/link-to}}
+        <button {{action "edit"}}>Modifier</button>
+    {{/if}}
+    <button {{action "removeCalendar" calendar}}>&times;</button>
+</div>

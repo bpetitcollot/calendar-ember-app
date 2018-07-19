@@ -1,0 +1,6 @@
+<div {{action editEvent event}} title="{{event.content}}">
+  {{#if removable}}
+    <button class="remove-event" {{action "remove"}}>&times;</button>
+  {{/if}}
+  {{event.title}}
+</div>

@@ -1,0 +1,9 @@
+{{outlet}}
+
+{{#link-to "calendars" class="button"}}Home{{/link-to}}
+
+{{#month-calendar calendars=model.calendars calendar=model.calendar onCreate=(action 'createEvent') editEvent=(action 'editEvent')}}{{/month-calendar}}
+
+{{#if editEvent}}
+  {{#editable-event event=editEvent calendar=model.calendar onSubmit=(action 'submittedEvent')}}{{/editable-event}}
+{{/if}}

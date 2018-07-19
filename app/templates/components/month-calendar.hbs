@@ -1,0 +1,39 @@
+<h1 style="text-align: center;"><span class="calendar-name">{{calendar.name}}</span></h1>
+
+<div class="select-calendars">
+  {{#each otherCalendars as |currentCalendar|}}
+  {{#select-calendar calendar=currentCalendar onAdd=(action 'addCalendar') onRemove=(action 'removeCalendar')}}{{/select-calendar}}
+  {{/each}}
+</div>
+
+<div class="month-nav">
+  <a class="to-previous-month" href="#" {{action 'toPreviousMonth'}}>&lt;&lt;</a>
+  <span class="current-month">{{monthName}}</span>
+  <a class="to-next-month" href="#" {{action 'toNextMonth'}}>&gt;&gt;</a>
+</div>
+
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td class="day-title">Lundi</td>
+    <td class="day-title">Mardi</td>
+    <td class="day-title">Mercredi</td>
+    <td class="day-title">Jeudi</td>
+    <td class="day-title">Vendredi</td>
+    <td class="day-title">Samedi</td>
+    <td class="day-title">Dimanche</td>
+  </tr>
+  {{#each monthArray as |week|}}
+    <tr>
+      {{#each week as |day|}}
+        <td class="day {{if day.today 'today' ''}} {{if day.currentMonth '' 'other-month'}}">
+          <div><a href="#" {{action "createEvent" day.date month year}}>{{day.date}}</a></div>
+          {{#each day.events as |event|}}
+            <div class="event-display {{if event.external '' 'external'}}">
+              {{#removable-event event=event.content removable=event.external editEvent=(action editEvent)}}{{/removable-event}}
+            </div>
+          {{/each}}
+        </td>
+      {{/each}}
+    </tr>
+  {{/each}}
+</table>

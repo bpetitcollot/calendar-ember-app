@@ -1,0 +1,107 @@
+body{
+  font-family: sans;
+}
+
+/************/
+/* CALENDAR */
+/************/
+
+/* Calendar selection */
+.select-calendars{
+  font-size: .8em;
+  text-align: center;
+  margin: 2em 0;
+}
+.calendar-name{
+  font-weight: bold;
+  padding: .5em;
+  cursor: pointer;
+  color: #999;
+  border: 1px solid #999;
+  border-radius: 5px;
+  transition: .5s;
+}
+h1 .calendar-name{
+  padding: .2em .5em;
+  background-color: #e00000;
+  color: #fff;
+  border: none;
+}
+.select-calendars .calendar-name.selected{
+  font-weight: bold;
+  background-color: #999;
+  color: #fff;
+  transition: .5s;
+}
+
+/* Months */
+.month-nav .current-month, .month-nav .to-previous-month, .month-nav .to-next-month{
+  display: inline-block;
+  text-align: center;
+}
+.month-nav .current-month{
+  width: 79%;
+  font-weight: bold;
+}
+.month-nav .to-previous-month{
+  width: 10%;
+  text-align: left;
+}
+.month-nav .to-next-month{
+  width: 10%;
+  text-align: right;
+}
+
+/* Days */
+.day-title, .day{
+   text-align: center;
+   width: 14%;
+   vertical-align: top;
+   border: 1px solid #999;
+}
+.day{
+  background-color: #ffffaa;
+  height: 5em;
+}
+.day.today{
+  background-color: #ffbb44;
+  border-color: red;
+}
+.day.other-month{
+  background-color: #ffffcc;
+  border-color: #ddd;
+}
+
+/* Events */
+.event-display{
+  margin: 1px;
+  padding: 1px;
+  background-color: #e00000;
+  color: #fff;
+  font-size: .9em;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.event-display:hover{
+  background-color: red;
+  cursor: pointer;
+  transition: .2s;
+}
+.event-display.external{
+  background-color: #666;
+  color: #fff;
+}
+.event-display.external:hover{
+  background-color: grey;
+}
+.remove-event{
+  float: right;
+  padding: 2px;
+  margin: 2px;
+  background: none;
+  line-height: .5em;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
